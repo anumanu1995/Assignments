@@ -1,14 +1,14 @@
 require 'numbers_and_words'
 require 'fileutils'
 class Filetask
-    def readFile(filename)
+    def read_file(filename)
         if File.exists?(filename)
             f = File.open(filename,'r+')
             puts f.read
         end
-       self.writeFile(filename)
+       self.write_file(filename)
     end
-    def writeFile(filename)
+    def write_file(filename)
         convertd = {}
         if File.exists?(filename)
             f = File.open(filename,'r+')
@@ -27,11 +27,11 @@ class Filetask
               puts "successfully replaced"
         end
     end
-    def copyFile(filename,newfilename)
+    def copy_file(filename,newfilename)
         FileUtils.copy(filename,newfilename)
         puts "File content copied to #{newfilename}" 
     end
 end
 file_task = Filetask.new
-file_task.readFile("number.txt")
-file_task.copyFile("number.txt","new.txt")
+file_task.read_file("number.txt")
+file_task.copy_file("number.txt","new.txt")
