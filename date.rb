@@ -40,3 +40,7 @@ puts "Enter a valid date type"
 type_value = gets.chomp.to_s
 date = Datetask.new(date_value,type_value)
 date.getconverted_dates
+
+
+# first line itself syntax error.
+#class inside instance varaible declarations
