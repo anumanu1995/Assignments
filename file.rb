@@ -35,3 +35,8 @@ end
 file_task = Filetask.new
 file_task.read_file("number.txt")
 file_task.copy_file("number.txt","new.txt")
+
+
+#Overall looks good
+#Tigtly coupled code
+#Source file data has been replaced, means we are missing the source data
