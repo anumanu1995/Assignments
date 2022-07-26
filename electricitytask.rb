@@ -39,3 +39,6 @@ elect_variable = Electricity.new;
 elect_variable.getElectricityDetails()
 
 
+#Overall looks good
+#method modularizing can be done
+#The logic is wrong
