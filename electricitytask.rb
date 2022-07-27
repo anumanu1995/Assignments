@@ -1,5 +1,7 @@
+$LOAD_PATH << '.'
+require 'calculator'
 class Electricity
-
+include Calculator
     def getElectricityDetails
         users ={}
         units = {}
@@ -13,24 +15,9 @@ class Electricity
         end
 
         for i in 1..usernum
-            if units[i] in 1..100
-                amount = units[i].to_f * 6
-            elsif units[i] in 101..300
-                amount = units[i].to_f * 11
-            elsif units[i] > 300
-                amount = units[i] * 15
-            end
-            if amount < 50
-                amount = 50
-            end
-            surcharge = 0.05
-            if amount > 300
-                surcharge = 0.15
-            end
-            finalamount =  amount.to_f + (amount.to_f * surcharge.to_f)
+            finalamount = self.electricity_calculator(units[i])
             puts 'User : ' + "#{users[i]}"
             puts 'Units: ' +  "#{units[i]}"
-            puts 'Amount: ' + "#{amount}"
             puts 'Total amount including surcharge: ' + "#{finalamount}"
         end
 end

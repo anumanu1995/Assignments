@@ -1,7 +1,5 @@
-1
-2
-5
-6
-5
-6
-7
+one
+two
+three
+five
+seventy-eight
