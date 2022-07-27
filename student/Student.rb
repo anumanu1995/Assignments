@@ -1,18 +1,18 @@
 class Student
 
-    def setStudDetails(rollNum,studName,mark1,mark2,mark3)
+    def set_studentdetails(rollNum,studName,*marks)
         @rollNum    =   rollNum
         @studName   =   studName
-        @mark1      =   mark1
-        @mark2      =   mark2
-        @mark3      =   mark3
-        self.calculateTotal   
+        @marks     = marks.flatten
+        @totalMarks = 0
+        self.calculate_total   
     end
-    def calculateTotal()
-        @totalMarks = @mark1.to_i + @mark2.to_i + @mark3.to_i
-        self.displayStudDetails
+    def calculate_total()
+
+        @marks.inject(0){|sum, marks| @totalMarks = @totalMarks + marks.to_i}
+        self.display_studentdetails
     end
-    def displayStudDetails()
+    def display_studentdetails()
         puts @studName
         puts @rollNum
         puts 'Total marks : ' + @totalMarks.to_s
@@ -22,10 +22,10 @@ end
 
 
 class StudentDemo < Student
-    def getStudDetails(rollNum,studName,mark1,mark2,mark3)
-        setStudDetails(rollNum,studName,mark1,mark2,mark3)
+    def get_studdetails(rollNum,studName,*marks)
+        set_studentdetails(rollNum,studName,*marks)
     end
 end
 
 stud = StudentDemo.new
-stud.getStudDetails(10,'Anu',10,15,20)
+stud.get_studdetails(10,'Anu',[10,15,20,20,100])
