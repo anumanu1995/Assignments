@@ -1,11 +1,10 @@
 class Student
 
-    def set_studentdetails(rollNum,studName,*marks)
+    def initialize(rollNum,studName,*marks)
         @rollNum    =   rollNum
         @studName   =   studName
         @marks     = marks.flatten
-        @totalMarks = 0
-        self.calculate_total   
+        @totalMarks = 0  
     end
     def calculate_total()
 
@@ -20,12 +19,5 @@ class Student
 
 end
 
-
-class StudentDemo < Student
-    def get_studdetails(rollNum,studName,*marks)
-        set_studentdetails(rollNum,studName,*marks)
-    end
-end
-
-stud = StudentDemo.new
-stud.get_studdetails(10,'Anu',[10,15,20,20,100])
+stud = Student.new(10,'Anu',[10,15,20,20,100])
+stud.calculate_total
