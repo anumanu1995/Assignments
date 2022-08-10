@@ -1,0 +1,61 @@
+Match End 
+-------------------
+
+|Innings | Team | Runs | Wickets
+---------------------------------
+|Innings 1| Team 1 | 40 | 3
+|Innings 2| Team 2 | 47 | 2
+
+
+Innings 1  Batting Summary
+
+-----------------------------------
+|Player | Runs | 
+-----------------
+|Sachin| 8 
+|Dhoni| 12 
+|Sewang| 12 
+|Ashish| 0 
+|Rohith| 8 
+
+
+Innings 2  Batting Summary
+
+-----------------------------------
+|Player | Runs | 
+-----------------
+|Simon| 20 
+|Adam| 10 
+|Andrew| 10 
+|Watson| 7 
+
+
+
+
+
+
+Innings 1  Bowlling Summary
+
+-----------------------------------
+|Player | wickets | 
+-----------------
+|Watson| 1 
+|Simon| 2 
+|Adam| 0 
+|Brad| 0 
+
+
+Innings 2  Bowlling Summary
+
+-----------------------------------
+|Player | wickets | 
+-----------------
+|Dhoni| 0 
+|Goutham| 1 
+|Sewang| 1 
+|Sachin| 0 
+
+
+
+
+Team 2 Won the match by 7  runs!
