@@ -20,7 +20,7 @@ module Scoreboard
                 f.puts "-----------------"
                 value['players_runs_score'].each do |key,pl|
                     value['players_out_mode'][key]= value['players_out_mode'][key] ? value['players_out_mode'][key] : 'Not Out'
-                    value['players_strike_rate'][key]= value['players_strike_rate'][key].to_f ? value['players_strike_rate'][key] : 0
+                    value['players_strike_rate'][key]= value['players_strike_rate'][key] ? value['players_strike_rate'][key].to_f : 0
                     f.puts "|#{key}| #{pl} | #{value['players_out_mode'][key]} |  #{value['players_strike_rate'][key]}"
                 end
                 f.puts "\n\n"
@@ -30,10 +30,11 @@ module Scoreboard
             innings.each do |value|
                 f.puts "#{value['innings']}  Bowlling Summary\n\n"
                 f.puts "-----------------------------------"
-                f.puts "|Player | wickets | "
+                f.puts "|Player | wickets |Economy "
                 f.puts "-----------------"
                 value['players_wicket_score'].each do |key,pl|
-                    f.puts "|#{key}| #{pl} "
+                    value['bowl_player_economy'][key]= value['bowl_player_economy'][key] ? value['bowl_player_economy'][key].to_f : 0
+                    f.puts "|#{key}| #{pl} | #{value['bowl_player_economy'][key]} "
                 end
                 f.puts "\n\n"
             end

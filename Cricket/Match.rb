@@ -25,6 +25,8 @@ class Match < Teaminfo
         results = {}
         bats_man_out_arr={}
         bats_man_faced_balls_arr={}
+        bowl_runs_conceded = {}
+        bowl_economy = {}
         bats_man_strike_rate = {}
         bat_team_arr =  batting.dup
         batting_now = bat_team_arr[0..1]
@@ -50,6 +52,11 @@ class Match < Teaminfo
             if batting_now_name!='' && !(bats_man_faced_balls_arr.include? batting_now_name)
 
                 bats_man_faced_balls_arr[batting_now_name] = 0
+                
+            end
+            if !(bowl_runs_conceded.include? bowlling_now)
+
+                bowl_runs_conceded[bowlling_now] = 0
                 
             end
             
@@ -86,6 +93,8 @@ class Match < Teaminfo
                     end
                     runs = runs.to_i + r
                     bat_man_run_arr[batting_now_name] = bat_man_run_arr[batting_now_name].to_i + r
+                    bowl_runs_conceded[bowlling_now] = bowl_runs_conceded[bowlling_now].to_i + r
+                    bowl_economy[bowlling_now] = self.calculate_bowling_economy(bowl_runs_conceded[bowlling_now],bowl_man_wicket_arr[bowlling_now] )
                     puts "Total runs of #{batting_now_name} #{bat_man_run_arr[batting_now_name]}"
 
                  end
@@ -111,6 +120,7 @@ class Match < Teaminfo
                     summary['total_wickets'] = wickets
                     summary['players_runs_score'] = bat_man_run_arr
                     summary['players_strike_rate'] = bats_man_strike_rate
+                    summary['bowl_player_economy'] = bowl_economy
                     summary['players_out_mode'] = bats_man_out_arr
                     summary['players_wicket_score'] = bowl_man_wicket_arr
                     summary['bat_team_name'] = bat_team_name
@@ -129,6 +139,7 @@ class Match < Teaminfo
         results['total_wickets'] = wickets
         results['players_runs_score'] = bat_man_run_arr
         results['players_out_mode'] = bats_man_out_arr
+        results['bowl_player_economy'] = bowl_economy
         results['players_strike_rate'] = bats_man_strike_rate
         results['players_wicket_score'] = bowl_man_wicket_arr
         results['bat_team_name'] = bat_team_name
@@ -159,5 +170,14 @@ class Match < Teaminfo
     def calculate_run_rate(balls,runs)
         run_rate = (runs * 100) / balls
         return run_rate
+    end
+    def calculate_bowling_economy(runs,wickets)
+        if(wickets==0 || runs ==0)
+            economy = 0
+        else
+            economy = runs / wickets
+        end
+       
+        return economy
     end
 end
