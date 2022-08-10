@@ -16,11 +16,12 @@ module Scoreboard
             innings.each do |value|
                 f.puts "#{value['innings']}  Batting Summary\n\n"
                 f.puts "-----------------------------------"
-                f.puts "|Player | Runs | Out | "
+                f.puts "|Player | Runs | Out | Strike rate |"
                 f.puts "-----------------"
                 value['players_runs_score'].each do |key,pl|
                     value['players_out_mode'][key]= value['players_out_mode'][key] ? value['players_out_mode'][key] : 'Not Out'
-                    f.puts "|#{key}| #{pl} | #{value['players_out_mode'][key]} "
+                    value['players_strike_rate'][key]= value['players_strike_rate'][key].to_f ? value['players_strike_rate'][key] : 0
+                    f.puts "|#{key}| #{pl} | #{value['players_out_mode'][key]} |  #{value['players_strike_rate'][key]}"
                 end
                 f.puts "\n\n"
             end

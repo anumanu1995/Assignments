@@ -11,6 +11,7 @@ puts t1
 t1c = gets.chomp.to_s
 if !(t1.include? t1c)
     puts "Invalid input for captain, exiting.."
+    exit
 end
 puts "Choose captain for Team 2 \n"
 puts "-----------------"
@@ -18,12 +19,14 @@ puts t2
 t2c = gets.chomp.to_s
 if !(t2.include? t2c)
     puts "Invalid input for captain, exiting.."
+    exit
 end
 puts "Choose coin side for Team 1 from 1=>Heads ,2=>Tails"
 puts "-----------------"
 t1side = gets.chomp.to_i
 if !([1,2].include? t1side)
     puts "Invalid input for coin side ,exiting.."
+    exit
 end
 t1side = t1side==1 ? 'Heads' : 'Tails'
 t2side = t1side=='Heads' ? 'Tails': 'Heads'
@@ -32,6 +35,7 @@ puts "-----------------"
 mtype = gets.chomp.to_s
 if !(['Test','ODI','T20'].include? mtype)
     puts "Invalid input for match type, exiting.."
+    exit
 end
 innings = {}
 

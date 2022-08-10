@@ -24,6 +24,8 @@ class Match < Teaminfo
         balls = 1
         results = {}
         bats_man_out_arr={}
+        bats_man_faced_balls_arr={}
+        bats_man_strike_rate = {}
         bat_team_arr =  batting.dup
         batting_now = bat_team_arr[0..1]
         bat_team_name = team_name
@@ -43,6 +45,11 @@ class Match < Teaminfo
             if batting_now_name!='' && !(bat_man_run_arr.include? batting_now_name)
 
                 bat_man_run_arr[batting_now_name] = 0
+                
+            end
+            if batting_now_name!='' && !(bats_man_faced_balls_arr.include? batting_now_name)
+
+                bats_man_faced_balls_arr[batting_now_name] = 0
                 
             end
             
@@ -82,6 +89,8 @@ class Match < Teaminfo
                     puts "Total runs of #{batting_now_name} #{bat_man_run_arr[batting_now_name]}"
 
                  end
+                 bats_man_faced_balls_arr[batting_now_name] = bats_man_faced_balls_arr[batting_now_name] + 1
+                 bats_man_strike_rate[batting_now_name] = self.calculate_run_rate(bats_man_faced_balls_arr[batting_now_name], bat_man_run_arr[batting_now_name])
                  if i== @@total_balls
                     puts "Innings  #{inning} End"
                     puts "--------------------------\n\n"
@@ -101,6 +110,7 @@ class Match < Teaminfo
                     summary['total_runs_scored'] = runs
                     summary['total_wickets'] = wickets
                     summary['players_runs_score'] = bat_man_run_arr
+                    summary['players_strike_rate'] = bats_man_strike_rate
                     summary['players_out_mode'] = bats_man_out_arr
                     summary['players_wicket_score'] = bowl_man_wicket_arr
                     summary['bat_team_name'] = bat_team_name
@@ -119,10 +129,10 @@ class Match < Teaminfo
         results['total_wickets'] = wickets
         results['players_runs_score'] = bat_man_run_arr
         results['players_out_mode'] = bats_man_out_arr
+        results['players_strike_rate'] = bats_man_strike_rate
         results['players_wicket_score'] = bowl_man_wicket_arr
         results['bat_team_name'] = bat_team_name
         results['bowl_team_name'] = bowl_team_name
-       
         return results
     end
     def prepare_results(innings,is_complete=0)
@@ -145,5 +155,9 @@ class Match < Teaminfo
             mode = 'Bold'
         end
         return mode
+    end
+    def calculate_run_rate(balls,runs)
+        run_rate = (runs * 100) / balls
+        return run_rate
     end
 end
