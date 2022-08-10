@@ -1,46 +1,42 @@
 Match End 
 -------------------
-
 |Innings | Team | Runs | Wickets
 ---------------------------------
-|Innings 1| Team 1 | 9 | 11
-|Innings 2| Team 2 | 9 | 11
+|Innings 1| Team 1 | 4 | 10
+|Innings 2| Team 2 | 0 | 11
 
 
 Innings 1  Batting Summary
-
 -----------------------------------
 |Player | Runs | Out | Strike rate |
 -----------------
-|Sachin| 0 | Caught behind |  0.0
+|Sachin| 0 | Runout |  0.0
 |Sewang| 0 | Bold |  0.0
-|Dhoni| 9 | Stumping |  180.0
-|Ashish| 0 | Catch out |  0.0
-|Rohith| 0 | Caught behind |  0.0
-|Kohli| 0 | Runout |  0.0
-|Yuvraj| 0 | Runout |  0.0
-|Raina| 0 | Catch out |  0.0
-|Aswin| 0 | Bold |  0.0
-|Dravid| 0 | Bold |  0.0
-|Goutham| 0 | Stumping |  0.0
+|Dhoni| 0 | Stumping |  0.0
+|Rohith| 0 | Runout |  0.0
+|Ashish| 0 | Runout |  0.0
+|Yuvraj| 0 | Stumping |  0.0
+|Kohli| 4 | Catch out |  133.0
+|Raina| 0 | Runout |  0.0
+|Dravid| 0 | Caught behind |  0.0
+|Goutham| 0 | LBW |  0.0
 
 
 Innings 2  Batting Summary
-
 -----------------------------------
 |Player | Runs | Out | Strike rate |
 -----------------
-|Simon| 4 | Runout |  80.0
-|Adam| 1 | LBW |  50.0
+|Simon| 0 | LBW |  0.0
 |Andrew| 0 | Bold |  0.0
-|Watson| 0 | Bold |  0.0
-|Ben| 0 | Catch out |  0.0
+|Adam| 0 | Bold |  0.0
 |Brad| 0 | Runout |  0.0
-|Graham| 0 | Runout |  0.0
-|Philip| 0 | Caught behind |  0.0
-|Pat| 4 | LBW |  200.0
-|Nathan| 0 | Runout |  0.0
-|Alex| 0 | Runout |  0.0
+|Watson| 0 | LBW |  0.0
+|Philip| 0 | Stumping |  0.0
+|Ben| 0 | Caught behind |  0.0
+|Nathan| 0 | Stumping |  0.0
+|Graham| 0 | Catch out |  0.0
+|Alex| 0 | Caught behind |  0.0
+|Pat| 0 | Runout |  0.0
 
 
 
@@ -48,24 +44,22 @@ Innings 2  Batting Summary
 
 
 Innings 1  Bowlling Summary
-
 -----------------------------------
 |Player | wickets |Economy 
 -----------------
-|Adam| 9 | 2.0 
-|Brad| 2 | 0.0 
+|Andrew| 6 | 0.0 
+|Adam| 4 | 4.0 
+|Philip| 0 | 0 
 
 
 Innings 2  Bowlling Summary
-
 -----------------------------------
 |Player | wickets |Economy 
 -----------------
-|Yuvraj| 2 | 0.0 
-|Kohli| 5 | 0.0 
-|Dravid| 4 | 4.0 
+|Yuvraj| 6 | 0.0 
+|Raina| 5 | 0 
 
 
 
 
-Team 2 Won the match by 0  runs!
+Team 1 Won the match by 4  runs!

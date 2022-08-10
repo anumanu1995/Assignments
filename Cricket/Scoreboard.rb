@@ -4,7 +4,7 @@ module Scoreboard
             File.open('score.txt', "w+") do |f| 
             f.puts "Match End \n" if is_complete!=0 
             f.puts "Match Info \n" if is_complete ==0
-            f.puts "-------------------\n\n"
+            f.puts "-------------------\n"
             f.puts "|Innings | Team | Runs | Wickets"
            f.puts "---------------------------------"
             innings.each do |value|
@@ -14,7 +14,7 @@ module Scoreboard
             end
            f.puts "\n\n"
             innings.each do |value|
-                f.puts "#{value['innings']}  Batting Summary\n\n"
+                f.puts "#{value['innings']}  Batting Summary"
                 f.puts "-----------------------------------"
                 f.puts "|Player | Runs | Out | Strike rate |"
                 f.puts "-----------------"
@@ -28,7 +28,7 @@ module Scoreboard
             f.puts "\n\n"
             f.puts "\n\n"
             innings.each do |value|
-                f.puts "#{value['innings']}  Bowlling Summary\n\n"
+                f.puts "#{value['innings']}  Bowlling Summary"
                 f.puts "-----------------------------------"
                 f.puts "|Player | wickets |Economy "
                 f.puts "-----------------"
