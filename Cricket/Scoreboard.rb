@@ -16,10 +16,11 @@ module Scoreboard
             innings.each do |value|
                 f.puts "#{value['innings']}  Batting Summary\n\n"
                 f.puts "-----------------------------------"
-                f.puts "|Player | Runs | "
+                f.puts "|Player | Runs | Out | "
                 f.puts "-----------------"
                 value['players_runs_score'].each do |key,pl|
-                    f.puts "|#{key}| #{pl} "
+                    value['players_out_mode'][key]= value['players_out_mode'][key] ? value['players_out_mode'][key] : 'Not Out'
+                    f.puts "|#{key}| #{pl} | #{value['players_out_mode'][key]} "
                 end
                 f.puts "\n\n"
             end

@@ -3,31 +3,41 @@ Match End
 
 |Innings | Team | Runs | Wickets
 ---------------------------------
-|Innings 1| Team 1 | 40 | 3
-|Innings 2| Team 2 | 47 | 2
+|Innings 1| Team 2 | 31 | 8
+|Innings 2| Team 1 | 25 | 11
 
 
 Innings 1  Batting Summary
 
 -----------------------------------
-|Player | Runs | 
+|Player | Runs | Out | 
 -----------------
-|Sachin| 8 
-|Dhoni| 12 
-|Sewang| 12 
-|Ashish| 0 
-|Rohith| 8 
+|Simon| 10 | LBW 
+|Adam| 0 | Caught behind 
+|Andrew| 6 | Caught behind 
+|Watson| 8 | Runout 
+|Brad| 1 | Bold 
+|Philip| 0 | Runout 
+|Ben| 6 | Stumping 
+|Nathan| 0 | Bold 
 
 
 Innings 2  Batting Summary
 
 -----------------------------------
-|Player | Runs | 
+|Player | Runs | Out | 
 -----------------
-|Simon| 20 
-|Adam| 10 
-|Andrew| 10 
-|Watson| 7 
+|Sachin| 0 | Caught behind 
+|Sewang| 0 | Runout 
+|Dhoni| 0 | Bold 
+|Rohith| 0 | LBW 
+|Ashish| 0 | Catch out 
+|Yuvraj| 0 | Runout 
+|Kohli| 0 | Catch out 
+|Dravid| 24 | Runout 
+|Raina| 1 | Stumping 
+|Aswin| 0 | Bold 
+|Goutham| 0 | Bold 
 
 
 
@@ -39,10 +49,10 @@ Innings 1  Bowlling Summary
 -----------------------------------
 |Player | wickets | 
 -----------------
-|Watson| 1 
-|Simon| 2 
-|Adam| 0 
-|Brad| 0 
+|Dravid| 2 
+|Goutham| 2 
+|Dhoni| 4 
+|Yuvraj| 0 
 
 
 Innings 2  Bowlling Summary
@@ -50,12 +60,11 @@ Innings 2  Bowlling Summary
 -----------------------------------
 |Player | wickets | 
 -----------------
-|Dhoni| 0 
-|Goutham| 1 
-|Sewang| 1 
-|Sachin| 0 
+|Ben| 6 
+|Nathan| 3 
+|Brad| 2 
 
 
 
 
-Team 2 Won the match by 7  runs!
+Team 2 Won the match by 6  runs!

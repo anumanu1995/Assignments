@@ -18,11 +18,12 @@ class Match < Teaminfo
         bowl_man_wicket_arr = {}
         summary = {}
         summary_data = []
-        run_arr = [0,1,2,4,6,7]
+        run_arr = [0,1,2,4,6,7,8,9,10,11,12]
         runs = 0
         wickets = 0
         balls = 1
         results = {}
+        bats_man_out_arr={}
         bat_team_arr =  batting.dup
         batting_now = bat_team_arr[0..1]
         bat_team_name = team_name
@@ -46,13 +47,14 @@ class Match < Teaminfo
             end
             
             r = run_arr.shuffle.first
-                if r == 0
+                if r == 0 || r >=8
 
                     puts "#{batting_now_name} Out!"
                     puts "-------------"
                     puts "Total runs of #{batting_now_name} #{bat_man_run_arr[batting_now_name]}"
                     bat_team_arr.delete(batting_now_name)
                     wickets = wickets.to_i + 1
+                    bats_man_out_arr[batting_now_name] = self.get_out_mode(r)
                     bowl_man_wicket_arr[bowlling_now] = bowl_man_wicket_arr[bowlling_now].to_i + 1
                     batting_now = bat_team_arr[0..1]
                     if bat_team_arr == []  
@@ -70,10 +72,6 @@ class Match < Teaminfo
                 elsif r == 7
                     puts "That is a no ball"
                 else
-                    # puts "----------debug startsss"
-                    # puts i
-                    # puts r
-                    # puts "----------debug ends//////////"
                     puts "Wow ! #{batting_now_name} Scored #{r} Runs \n"
                     # runs doubling for captains
                     if batting_now_name == bat_team_captain
@@ -103,6 +101,7 @@ class Match < Teaminfo
                     summary['total_runs_scored'] = runs
                     summary['total_wickets'] = wickets
                     summary['players_runs_score'] = bat_man_run_arr
+                    summary['players_out_mode'] = bats_man_out_arr
                     summary['players_wicket_score'] = bowl_man_wicket_arr
                     summary['bat_team_name'] = bat_team_name
                     summary['bowl_team_name'] = bowl_team_name
@@ -119,6 +118,7 @@ class Match < Teaminfo
         results['total_runs_scored'] = runs
         results['total_wickets'] = wickets
         results['players_runs_score'] = bat_man_run_arr
+        results['players_out_mode'] = bats_man_out_arr
         results['players_wicket_score'] = bowl_man_wicket_arr
         results['bat_team_name'] = bat_team_name
         results['bowl_team_name'] = bowl_team_name
@@ -128,5 +128,22 @@ class Match < Teaminfo
     def prepare_results(innings,is_complete=0)
         create_scorecard(innings,@match_type,is_complete)
     end
-
+    def get_out_mode(r)
+        case r
+        when 0
+            mode = 'LBW'
+            
+        when 8
+            mode = 'Caught behind'
+        when 9
+            mode = 'Stumping'
+        when 10
+            mode = 'Runout'
+        when 11
+            mode = 'Catch out'
+        else
+            mode = 'Bold'
+        end
+        return mode
+    end
 end
